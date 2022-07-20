@@ -1,2 +1,6 @@
 *.log
 *.bak
+*.json
+!index.html
+!index_script.js
+!index_style.css
