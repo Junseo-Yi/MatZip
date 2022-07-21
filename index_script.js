@@ -33,16 +33,37 @@ function myMap(){
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions );
   var marker_ggumteo = new google.maps.Marker({position: ggumteo, map: map}); //마커 하나 만들기
+  //마커 여러 개 만들기
+  //var myIcon = new google.maps.MarkerImage("./cat1.jpg");
   for (var i=0; i<gagelist.length; i++){
     var markers = new google.maps.Marker({
       position: gagelist[i],
       map: map
+      //icon: myIcon
     });
 }
+for (var j = 0; j < markers.length; j++) {
+		google.maps.event.addListener(markers[j], 'click', function() {
+			map.setCenter(this.getPosition());
+			map.setZoom(17);
+
+			var infowindow = new google.maps.InfoWindow({
+				content: getTemplateAjax('./tmpl/detail.hbs', {
+					spot_nm: this.spot_nm,
+					occrrnc_cnt: this.occrrnc_cnt,
+					caslt_cnt: this.caslt_cnt,
+					dth_dnv_cnt: this.dth_dnv_cnt,
+					se_dnv_cnt: this.se_dnv_cnt,
+					sl_dnv_cnt: this.sl_dnv_cnt
+				})
+			});
+			infowindow.open(map, this);
+		});
+}
 
 }
 
-//마커 여러 개 만들기
+
 /*function drawMarkers(gagelist){
   for (var i = 0; i < gagelist.length; i++) {
 		var marker = new google.maps.Marker({
