@@ -3,9 +3,10 @@
 var gage_loc = [{lat:35.14179406784828, lng:129.1093778542578},{lat:35.14222540070751, lng:129.10905986268358}];
 var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이'];
 var gage_score = [5,4];
-var gage_rec_menu = ['2인 세트', '치즈떡볶이'];
+var gage_rep_menu = ['2인 세트', '치즈 떡볶이'];
 var gage_more = ['https://m.place.naver.com/restaurant/1145800717/home?entry=plt',
 "https://m.place.naver.com/restaurant/75382121/home?entry=plt"]
+var gage_line_rate = ['나쵸가 정말 맛있다.', '밀떡이 좋다면 최고의 가성비']
 
 let infowindow_contents = [];
 
@@ -15,14 +16,12 @@ for (let i=0; i<gage_loc.length; i++){
     stars += "★";
   }
   infowindow_contents[i] = '<div id="content">' +
-    '<h3 id="firstHeading" class="firstHeading">'+gage_name[i]+'</h3>' +
+    '<h3 id="firstHeading" class="firstHeading">'+gage_name[i]
+    +'<img src = "./cat1.jpg" width = "20px", height = "20px">'+"</a>"+'</h3>' +
     '<div id="bodyContent">' + '추천: ' + stars +
-    '<div style="color:green;">가게 추천 메뉴: <div style="color:black;display:inline;">' + gage_rec_menu[i] +'</div></div>'+
-    '추가정보:'+
-    `<a href= ${gage_more[i]}>` +
-    gage_more[i]+"</a>"+
-    "</div>" +
-    "</div>";
+    '<div style="color:green;">가게 대표 메뉴: <div style="color:black;display:inline;">' + gage_rep_menu[i] +
+    '<br>한 줄 평: '+ gage_line_rate[i]+
+    "</div></div></div></div>";
 }
 
 function myMap(){
@@ -33,9 +32,10 @@ function myMap(){
   };
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions );
-  var marker_ggumteo = new google.maps.Marker({position: ggumteo, map: map});
-  const infowindow = new google.maps.InfoWindow();
 
+  var marker_ggumteo = new google.maps.Marker({position: ggumteo, map: map});
+  var infowindow = new google.maps.InfoWindow();
+//click 리스너와 연결짓기
   function create_marker_info(i){
     var marker = new google.maps.Marker({position: gage_loc[i], map: map});//위치별 마커찍기
     marker.addListener("click", () => {
@@ -45,11 +45,24 @@ function myMap(){
       map,
       shouldFocus: true,
     });
-  });//click 리스너와 연결짓기
+    var more_content = document.getElementById('more_info');
+    more_content.innerHTML = `<iframe src=${gage_more[i]} width = 100% height = 100%></iframe>`;
+  });
   }
+
   for (let i=0; i<gage_loc.length;i++){
     create_marker_info(i);
   }
+  marker_ggumteo.addListener("click", () => {
+    infowindow.setContent("<strong><div id = 'bodyContent' style = 'font-size:1.5em'>남천동 최고의 수학학원</div>"+
+  "<a href = 'https://okdream.modoo.at/?pc=1'>홈페이지 바로 가기</a></strong>");
+    infowindow.open({
+      anchor: marker_ggumteo,
+      map,
+      shouldFocus: true
+    });
+  });
+  //infowindow 모양 바꾸기
 
 }
 

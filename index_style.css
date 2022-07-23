@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Mini_SonggeulSSi';
+    src: url('./나눔손글씨 미니 손글씨.ttf') format('truetype')
+}
+@font-face {
+    font-family: 'DanDan';
+    src: url('./나눔손글씨 따악단단.ttf') format('truetype')
+}
+header{
+  font-family: 'Mini_SonggeulSSi', sans-serif;
+  font-size: 2em;
+  text-align: center;
+  height: 50px;
+}
+footer{
+  text-align: center;
+  color: #A9A9A9;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 70% 30%;
@@ -14,5 +32,10 @@
   margin: 2px;
 }
 
-.map {
+#firstHeading {
+  font-family: 'Mini_SonggeulSSi', sans-serif;
+}
+#bodyContent {
+  font-family: 'DanDan', sans-serif;
+  font-size: 1.5em;
 }
