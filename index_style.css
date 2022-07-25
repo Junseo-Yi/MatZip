@@ -20,18 +20,23 @@ footer{
   display: grid;
   grid-template-columns: 70% 30%;
   /*background-color: #0000CD;*/
-  border: 5px solid #00FFFF;
+  /*border: 5px solid #00FFFF;*/
   height : 500px;
 }
 
 .grid-item {
 /*  background-color: #000000;
   color: #FFFFFF;*/
-  border : 5px solid #FFFFFF;
   text-align: center;
   margin: 2px;
 }
-
+#map{
+  border : 5px dotted #000000;
+}
+#more_info{
+  padding : 1em;
+  border: 10px solid #000000;
+}
 #firstHeading {
   font-family: 'Mini_SonggeulSSi', sans-serif;
 }

@@ -49,6 +49,14 @@ function myMap(){
     });
     var more_content = document.getElementById('more_info');
     more_content.innerHTML = `<iframe src=${gage_more[i]} width = 100% height = 100%></iframe>`;
+    var body_for_bgcolor = document.getElementById('bodyy');
+    body_for_bgcolor.style.backgroundColor = '#c7fcff';
+    var map_for_dot = document.getElementById('map');
+    map_for_dot.style.border = '5px dotted #000000';
+    var header_color = document.getElementById('headerr');
+    header_color.style.color = '#000000';
+    var info_color = document.getElementById('more_info');
+    info_color.style.color = '#000000';
   });
   }
 
@@ -63,6 +71,14 @@ function myMap(){
       map,
       shouldFocus: true
     });
+    var body_for_bgcolor = document.getElementById('bodyy');
+    body_for_bgcolor.style.backgroundColor = '#1c4dd4';
+    var map_for_dot = document.getElementById('map');
+    map_for_dot.style.border = '5px dotted #FFFFFF';
+    var header_color = document.getElementById('headerr');
+    header_color.style.color = '#FFFFFF';
+    var info_color = document.getElementById('more_info');
+    info_color.style.color = '#FFFFFF';
   });
   //infowindow 모양 바꾸기
 
