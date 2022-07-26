@@ -1,4 +1,3 @@
-
 //지도 만드는 부분
 var gage_loc = [{lat:35.14173096762493, lng:129.1093789683257},{lat:35.14222540070751, lng:129.10905986268358},
   {lat:35.14181117574246, lng:129.10943040691498}];
@@ -34,8 +33,9 @@ function myMap(){
   };
 
   var map = new google.maps.Map(document.getElementById("map"), mapOptions );
+  //var kkumteo_icon = new google.maps.MarkerImage("./kkumteo_logo",new google.maps.Size(71, 71));
+  var marker_ggumteo = new google.maps.Marker({position: ggumteo, map: map/*, icon: kkumteo_icon*/});
 
-  var marker_ggumteo = new google.maps.Marker({position: ggumteo, map: map});
   var infowindow = new google.maps.InfoWindow();
 //click 리스너와 연결짓기
   function create_marker_info(i){
@@ -65,7 +65,8 @@ function myMap(){
   }
   marker_ggumteo.addListener("click", () => {
     infowindow.setContent("<strong><div id = 'bodyContent' style = 'font-size:1.5em'>남천동 최고의 수학학원</div>"+
-  "<a href = 'https://okdream.modoo.at/?pc=1'>홈페이지 바로 가기</a></strong>");
+  "<a href = 'https://okdream.modoo.at/?pc=1'><img src = './home_icon.jpg' width = 100px height = 100px/></a>"+
+  "<a href = 'https://instagram.com/mh_kkumteo'><img src = './insta_icon.jpg' width = 100px height = 100px/></a></strong>");
     infowindow.open({
       anchor: marker_ggumteo,
       map,
