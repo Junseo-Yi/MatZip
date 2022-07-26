@@ -1,13 +1,14 @@
 //지도 만드는 부분
 var gage_loc = [{lat:35.14173096762493, lng:129.1093789683257},{lat:35.14222540070751, lng:129.10905986268358},
-  {lat:35.14181117574246, lng:129.10943040691498}];
-var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이', '마이웨이 린린'];
-var gage_score = [5,3,4];
-var gage_rep_menu = ['2인 세트', '치즈 떡볶이','덮밥과 맛탕'];
+  {lat:35.14181117574246, lng:129.10943040691498},{lat:35.14326495414675, lng:129.10990951220438}];
+var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이', '마이웨이 린린','조방 낙지'];
+var gage_score = [5,3,4,3];
+var gage_rep_menu = ['2인 세트', '치즈 떡볶이','덮밥과 맛탕','낙곱'];
 var gage_more = ['https://m.place.naver.com/restaurant/1145800717/home?entry=plt',
 "https://m.place.naver.com/restaurant/75382121/home?entry=plt",
-"https://m.place.naver.com/restaurant/1522729624/home?entry=plt"]
-var gage_line_rate = ['나쵸가 정말 맛있다.', '밀떡이 좋다면 좋을 듯.', '최고의 맛탕.']
+"https://m.place.naver.com/restaurant/1522729624/home?entry=plt",
+"https://m.place.naver.com/restaurant/13013814/home?entry=plt"]
+var gage_line_rate = ['나쵸가 정말 맛있다.', '밀떡이 좋다면 좋을 듯.', '최고의 맛탕.', '수정과가 정말 맛있다.']
 
 let infowindow_contents = [];
 
