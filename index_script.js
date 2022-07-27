@@ -1,14 +1,17 @@
 //지도 만드는 부분
 var gage_loc = [{lat:35.14173096762493, lng:129.1093789683257},{lat:35.14222540070751, lng:129.10905986268358},
-  {lat:35.14181117574246, lng:129.10943040691498},{lat:35.14326495414675, lng:129.10990951220438}];
-var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이', '마이웨이 린린','조방 낙지'];
-var gage_score = [5,3,4,3];
-var gage_rep_menu = ['2인 세트', '치즈 떡볶이','덮밥과 맛탕','낙곱'];
+  {lat:35.14181117574246, lng:129.10943040691498},{lat:35.14326495414675, lng:129.10990951220438},
+{lat:35.14091957341429, lng:129.1073284580918}];
+var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이', '마이웨이 린린','조방 낙지','덴푸라 마켓'];
+var gage_score = [5,3,4,3,4];
+var gage_rep_menu = ['2인 세트', '치즈 떡볶이','덮밥과 맛탕','낙곱','고구마튀김'];
 var gage_more = ['https://m.place.naver.com/restaurant/1145800717/home?entry=plt',
 "https://m.place.naver.com/restaurant/75382121/home?entry=plt",
 "https://m.place.naver.com/restaurant/1522729624/home?entry=plt",
-"https://m.place.naver.com/restaurant/13013814/home?entry=plt"]
-var gage_line_rate = ['나쵸가 정말 맛있다.', '밀떡이 좋다면 좋을 듯.', '최고의 맛탕.', '수정과가 정말 맛있다.']
+"https://m.place.naver.com/restaurant/13013814/home?entry=plt",
+"https://m.place.naver.com/restaurant/1880780289/home?entry=plt"]
+var gage_line_rate = ['나쵸가 정말 맛있다.', '밀떡이 좋다면 좋을 듯.', '최고의 맛탕.',
+ '수정과가 정말 맛있다.','튀김이 맛있지만 일찍 가야한다.']
 
 let infowindow_contents = [];
 
@@ -57,7 +60,7 @@ function myMap(){
     var header_color = document.getElementById('headerr');
     header_color.style.color = '#000000';
     var info_color = document.getElementById('more_info');
-    info_color.style.color = '#000000';
+    info_color.style.border = '10px solid #000000';
   });
   }
 
@@ -66,21 +69,37 @@ function myMap(){
   }
   marker_ggumteo.addListener("click", () => {
     infowindow.setContent("<strong><div id = 'bodyContent' style = 'font-size:1.5em'>남천동 최고의 수학학원</div>"+
-  "<a href = 'https://okdream.modoo.at/?pc=1'><img src = './home_icon.jpg' width = 100px height = 100px/></a>"+
-  "<a href = 'https://instagram.com/mh_kkumteo'><img src = './insta_icon.jpg' width = 100px height = 100px/></a></strong>");
+  "<a href = 'https://okdream.modoo.at/?pc=1' target='_blank' rel='noopener noreferrer'><img src = './home_icon.jpg' width = 100px height = 100px/></a>"+
+  "<a href = 'https://instagram.com/mh_kkumteo' target='_blank' rel='noopener noreferrer'><img src = './insta_icon.jpg' width = 100px height = 100px/></a></strong>");
     infowindow.open({
       anchor: marker_ggumteo,
       map,
       shouldFocus: true
     });
+    function getRandomInt(min, max) {
+      min = Math.ceil(min);
+      max = Math.floor(max);
+      return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+    }
+    var ojumchu = getRandomInt(0,gage_name.length-1);
+    var ojeochu = getRandomInt(0,gage_name.length-1);
+    if(ojumchu == ojeochu){
+      ojeochu--;
+      if(ojeochu < 0){
+        ojeochu +=2;
+      }
+    }
     var body_for_bgcolor = document.getElementById('bodyy');
     body_for_bgcolor.style.backgroundColor = '#1c4dd4';
+    var more_content = document.getElementById('more_info');
+    more_content.innerHTML = `<div height = 50% width = 100%><h1>오.점.추: ${gage_name[ojumchu]}</h1></div>`+
+    `<div height = 50% width = 100%><h1>오.저.추: ${gage_name[ojeochu]}</h1></div>`;
     var map_for_dot = document.getElementById('map');
     map_for_dot.style.border = '5px dotted #FFFFFF';
     var header_color = document.getElementById('headerr');
     header_color.style.color = '#FFFFFF';
     var info_color = document.getElementById('more_info');
-    info_color.style.color = '#FFFFFF';
+    info_color.style.border = '10px solid #FFFFFF';
   });
   //infowindow 모양 바꾸기
 
