@@ -2,18 +2,38 @@
 var gage_loc = [{lat:35.14173096762493, lng:129.1093789683257},{lat:35.14222540070751, lng:129.10905986268358},
   {lat:35.14181117574246, lng:129.10943040691498},{lat:35.14326495414675, lng:129.10990951220438},
 {lat:35.14091957341429, lng:129.1073284580918},
-{lat:35.14347181356536, lng:129.11032077917386}];
-var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이', '마이웨이 린린','조방 낙지','덴푸라 마켓','수영쌈밥'];
-var gage_score = [5,3,4,3,4,5];
-var gage_rep_menu = ['2인 세트', '치즈 떡볶이','덮밥과 맛탕','낙곱','고구마튀김','닭갈비정식'];
+{lat:35.14347181356536, lng:129.11032077917386},{lat:35.1421124644349, lng:129.1089472401955},
+{lat:35.142493390140075,lng:129.10932459360615},{lat:35.14043609776437,lng:129.11019836101036},
+{lat:35.142353280936064,lng:129.11077186957914},{lat:35.14075155957547,lng:129.10882710080037},
+{lat:35.140370104444756,lng:129.11080841572212},{lat:35.14206399825762, lng:129.10927237060764},
+{lat:35.14291448114974,lng:129.1099827455599}];
+var gage_name = ['타코들며 쎄쎄쎄', '신전떡볶이', '마이웨이 린린','조방 낙지','덴푸라 마켓','수영쌈밥','피자스쿨','카페051'
+,'신창국밥','시엘로','팥','초량원조불백','봉구스','유가네'];
+var gage_score = [5,3,4,3,4,5,4,5,3,4,5,3,2,3];
+var gage_rep_menu = ['2인 세트', '치즈 떡볶이','덮밥과 맛탕','낙곱','고구마튀김','닭갈비정식','고구마피자','아이스티','섞어국밥'
+,'모카쉬폰','팥빙수','불백','제육','치즈퐁듀무언가'];
 var gage_more = ['https://m.place.naver.com/restaurant/1145800717/home?entry=plt',
 "https://m.place.naver.com/restaurant/75382121/home?entry=plt",
 "https://m.place.naver.com/restaurant/1522729624/home?entry=plt",
 "https://m.place.naver.com/restaurant/13013814/home?entry=plt",
 "https://m.place.naver.com/restaurant/1880780289/home?entry=plt",
-"https://m.place.naver.com/restaurant/1942275816/home?entry=plt"]
+"https://m.place.naver.com/restaurant/1942275816/home?entry=plt",
+"https://m.place.naver.com/restaurant/21099570/home?entry=plt",
+"https://m.place.naver.com/restaurant/1181353946/home?entry=plt",
+"https://m.place.naver.com/restaurant/16688669/home?entry=plt",
+"https://m.place.naver.com/restaurant/37867981/home?entry=plt",
+"https://m.place.naver.com/restaurant/1070131950/home?entry=plt",
+"https://m.place.naver.com/restaurant/36627043/home?entry=plt",
+"https://m.place.naver.com/restaurant/34721362/home?entry=plt",
+"https://m.place.naver.com/restaurant/1423731348/home?entry=plt",]
 var gage_line_rate = ['나쵸가 정말 맛있다.', '밀떡이 좋다면 좋을 듯.', '최고의 맛탕.',
- '수정과가 정말 맛있다.','튀김이 맛있지만 일찍 가야한다.','고등어조림이 밑반찬']
+ '수정과가 정말 맛있다.','튀김이 맛있지만 일찍 가야한다.','고등어조림이 밑반찬', '적당한 가성비, 맛있는 피자',
+'학원가의 터줏대감 카페, 가성비 좋고 깔끔한 음료들',
+'솔직히 유명국밥집 정도 맛은 아님, 근데 국밥은 그 자체로 존중받아야 함',
+'속이 편하고 적당히 달아 먹기 좋다.','설빙과는 결이 다른 맛있는 빙수, 고양이랑 토끼들이 귀엽다',
+'초량의 원조에는 조금 못미친다. 하지만 푸짐한 양은 그걸 보완할 정도, 대식가 매우 추천',
+'다른 건 다 괜찮다. 그런데 너무 짜다. 많이 짜다.','맛은 괜찮은데 밥의 식감이 아쉽다.'
+]
 
 let infowindow_contents = [];
 
